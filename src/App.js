@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Login from './components/Login'
 import FriendsList from './components/FriendsList'
+import AddFriend from './components/AddFriend'
 import ProtectedRoute from './components/ProtectedRoute'
 import { BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 
@@ -29,6 +30,7 @@ function App() {
         <Switch>
           <Route path='/login' component={Login} />
           <ProtectedRoute path='/friends' component={FriendsList} />
+          <ProtectedRoute path='/addfriend' component={AddFriend} />
           <Route path='/' component={Login} />
         </Switch>
       </div>
