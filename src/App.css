@@ -6,6 +6,18 @@
   height: 40vmin;
   pointer-events: none;
 }
+.header{
+  display: flex;
+  justify-content: center;
+}
+ul {
+  display: flex;
+}
+li {
+  margin-left: 5%;
+  margin-right: 5%;
+  list-style: none;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
