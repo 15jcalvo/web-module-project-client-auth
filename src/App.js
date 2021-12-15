@@ -20,7 +20,7 @@ function App() {
               <Link to='/friends'>Friend List</Link>
             </li>
             <li>
-              <Link to='/addfriend'>Add Friend</Link>
+              <Link to='/friends/add'>Add Friend</Link>
             </li>
             <li>
               <Link to='/logout'>Logout</Link>
@@ -28,10 +28,10 @@ function App() {
           </ul>
         </div>
         <Switch>
-          <Route path='/login' component={Login} />
-          <ProtectedRoute path='/friends' component={FriendsList} />
-          <ProtectedRoute path='/addfriend' component={AddFriend} />
-          <Route path='/' component={Login} />
+          <Route exact path='/login' component={Login} />
+          <ProtectedRoute exact path='/friends' component={FriendsList} />
+          <ProtectedRoute exact path='/friends/add' component={AddFriend} />
+          <Route exact path='/' component={Login} />
         </Switch>
       </div>
     </Router>

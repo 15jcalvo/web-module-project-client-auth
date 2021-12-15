@@ -4,8 +4,8 @@ import axios from 'axios'
 class AddFriend extends React.Component {
     state = {
         friend: {
-          name: '',
-          email: ''
+            name: '',
+            email: '',
         }
       };
     
@@ -19,7 +19,23 @@ class AddFriend extends React.Component {
       };
     submit = e => {
         e.preventDefault();
-        console.log('submit')
+        const token = localStorage.getItem('token')
+        axios.post('http://localhost:9000/api/friends', {
+            id: parseInt(Math.random()*100),
+            name: this.state.friend.name,
+            email: this.state.friend.email,
+            age: parseInt(Math.random()*100),
+        },{
+            headers: {
+                authorization: token
+            }
+        })
+            .then(res=> {
+                console.log(res)
+            })
+            .catch(err=>{
+                console.log(err)
+            })
     }
     render() {
         return(
@@ -27,12 +43,14 @@ class AddFriend extends React.Component {
             <h1>Add Friend</h1>
             <div>
                 <form onSubmit={this.submit}>
+                    <label>Name</label>
                     <input 
                         type='text'
                         name='name'
                         value={this.state.friend.username}
                         onChange={this.handleChange}
                     />
+                    <label>Email</label>
                     <input 
                         type='email'
                         name='email'
