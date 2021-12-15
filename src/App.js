@@ -11,16 +11,16 @@ function App() {
           <h1>Friends Database</h1>
           <ul>
             <li>
-              <h2>Login</h2>
+              <Link to='/login'>Login</Link>
             </li>
             <li>
-              <h2>Friend List</h2>
+              <Link to='/friends'>Friend List</Link>
             </li>
             <li>
-              <h2>Add Friend</h2>
+              <Link to='/addfriend'>Add Friend</Link>
             </li>
             <li>
-              <h2>Logout</h2>
+              <Link to='/logout'>Logout</Link>
             </li>
           </ul>
         </div>
