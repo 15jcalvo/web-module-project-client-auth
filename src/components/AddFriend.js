@@ -32,6 +32,7 @@ class AddFriend extends React.Component {
         })
             .then(res=> {
                 console.log(res)
+                this.props.history.push('/friends')
             })
             .catch(err=>{
                 console.log(err)

@@ -3,6 +3,7 @@ import './App.css';
 import Login from './components/Login'
 import FriendsList from './components/FriendsList'
 import AddFriend from './components/AddFriend'
+import Logout from './components/Logout'
 import ProtectedRoute from './components/ProtectedRoute'
 import { BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 
@@ -32,6 +33,7 @@ function App() {
           <ProtectedRoute exact path='/friends' component={FriendsList} />
           <ProtectedRoute exact path='/friends/add' component={AddFriend} />
           <Route exact path='/' component={Login} />
+          <Route exact path='/logout' component={Logout} />
         </Switch>
       </div>
     </Router>
